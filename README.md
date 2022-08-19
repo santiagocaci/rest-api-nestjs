@@ -21,7 +21,7 @@ $ npm run db:dev:up
 - Crea una variable de entorno JWT_SECRET_KEY y asignale un valor en string
 - Agrega el siguiente codigo a prisma/scheme.prisma
 
-```Typescript
+```typescript
 model User {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
@@ -53,8 +53,9 @@ model Bookmark {
 
   @@map("bookmarks")
 }
-
 ```
+
+Migra los esquemas de prisma.schema a la base de datos con `npx prisma migrate dev`
 
 ## Prisma
 
@@ -63,7 +64,6 @@ model Bookmark {
 $ npx prisma studio
 
 # create migrations from your Prisma schema, apply them to the database, generate artifacts
-# run this command first
 $ npx prisma migration dev
 
 # pull the schema from an existing database, updating the Prisma schema
@@ -76,7 +76,6 @@ $ prisma db push
 ## Running the app
 
 ```bash
-
 # development
 $ npm run start
 
